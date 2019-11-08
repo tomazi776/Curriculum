@@ -136,6 +136,22 @@ text-align: center;
     background-size: cover;
 }
 
+#about{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    content: " ";
+    display: block;
+    width: 75%;
+    background: url(images/jatlo.jpg) top center no-repeat #910c0c;
+    opacity: 70%;
+    background-size: auto;
+    background-size: cover;
+}
+
+
 *, ::after, ::before {
     box-sizing: inherit;
 }
@@ -235,6 +251,19 @@ border-right: 1px solid #cecece;
     display: block;
 }
 
+.main-intro h1{
+    text-transform: uppercase;
+}
+
+.main-intro{
+    margin: 7% 15%;
+}
+
+.main-intro ul{
+    list-style: inside;
+    margin-right: 80px ;
+}
+
 .main-section h1{
     text-transform: uppercase;
 }
@@ -247,7 +276,8 @@ border-right: 1px solid #cecece;
     color: #e64c3c;
 }
 
-.work-background{
+
+.main-subtitle{
     color: #e64c3c;
     font-size: 40px;
 }
