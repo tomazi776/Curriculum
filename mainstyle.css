@@ -384,6 +384,9 @@ border-right: 1px solid #cecece;
     margin-left: 160px;
     padding: 60px 0;
     border-top: 1px solid #cecece;
+    opacity: 1;
+    transition: all 1.2s;
+    transition-delay: 0.1s;
 }
 
 .timeline-now{
@@ -394,6 +397,16 @@ border-right: 1px solid #cecece;
 
 .timeline-workplace ul{
     list-style: circle;
+}
+
+.show{
+    opacity: 1;
+    left:0;
+}
+
+.hide{
+    opacity: 0;
+    left: -100%;
 }
 
 .workplaces > ul, .workplaces > ul > li{

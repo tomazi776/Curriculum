@@ -1,19 +1,41 @@
-// console.log(document.head);
-// console.log(document.body);
-// var name = 'Dupal';
-// console.log(document.all[10]);
+//    const workplaces = (document.getElementsByClassName("workplaces"));
+// console.log(workplaces);
 
-var workplacesIdEl = document.getElementById('workplaces');
-console.log(workplacesIdEl);
+// const workplacesIdEl = document.getElementById('workplaces');
 
-var workplace = workplacesIdEl.getElementsByClassName('workplace');
-var workplaceHeader = workplace[0].getElementsByClassName('workplace-heading')
-// workplace[1].getElementsByClassName('workplace-heading')
-// function getWorkplaceHeaders(){
-//     for 
-// }
+// document.addEventListener("DOMContentLoaded", function(){
 
-var firstWorkplaceHeading = document.querySelector('.workplace:first-child');
+// });
 
-console.log(firstWorkplaceHeading);
-// console.log(workplaceHeader.getElementByTagName('h2'));
+const workplaces = Array.from(document.getElementsByClassName('timeline-contents'));
+console.log(workplaces.length)
+
+showOnScroll();
+
+
+function showOnScroll (yPos){
+    var divYPos = 200;
+    for (var i = 0; i < workplaces.length; i++){
+        var y = window.scrollY;
+        if (y >= divYPos){
+            if (i == 0){
+                workplaces[i].className = "timeline-contents timeline-now show"
+            }
+            else{
+                workplaces[i].className = "timeline-contents show"
+            }
+        } 
+        
+        else if (y < divYPos){
+            if (i == 0){
+                workplaces[i].className = "timeline-contents timeline-now hide"
+            }
+            else{
+                workplaces[i].className = "timeline-contents hide"
+            }
+        }
+        divYPos += 300;
+    }
+};
+
+    window.addEventListener("scroll", showOnScroll);
