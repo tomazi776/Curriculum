@@ -1,10 +1,4 @@
 
-// var workplaceHeader = workplace[0].getElementsByClassName('workplace-heading')
-// workplace[1].getElementsByClassName('workplace-heading')
-// function getWorkplaceHeaders(){
-//     for 
-// }
-
 // var firstWorkplaceHeading = document.querySelector('.workplace:first-child');
 
 var homeSections = document.getElementsByClassName("home-section")
