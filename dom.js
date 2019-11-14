@@ -1,3 +1,12 @@
+//    const workplaces = (document.getElementsByClassName("workplaces"));
+// console.log(workplaces);
+
+// const workplacesIdEl = document.getElementById('workplaces');
+
+// document.addEventListener("DOMContentLoaded", function(){
+
+// });
+
 const workplaces = Array.from(document.getElementsByClassName('timeline-contents'));
 console.log(workplaces.length)
 
@@ -30,4 +39,3 @@ function showOnScroll (yPos){
 };
 
     window.addEventListener("scroll", showOnScroll);
-
