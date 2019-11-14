@@ -30,3 +30,4 @@ function showOnScroll (yPos){
 };
 
     window.addEventListener("scroll", showOnScroll);
+
