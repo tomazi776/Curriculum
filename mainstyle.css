@@ -1,5 +1,5 @@
 
-/* Global */
+/* ---Global--- */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
@@ -22,6 +22,8 @@ body.parent-home .site-sidebar .main-navigation {
     margin-top: 0;
 }
 
+/* ----- Portfolio START ----- */
+
 .portfolios-flex{
     background: black;
     display: flex;
@@ -40,79 +42,80 @@ body.parent-home .site-sidebar .main-navigation {
     opacity: 0.5;
 }
 
-#dev{
-    position: absolute;
-    top:0;
-    left:25%;
-    width: 37.5%;
+.developer-portfolio{
+    display: relative;
+    background-image: url(images/matrix.png);
+    background-size: cover;
+    width: 50%;
     height: 100%;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+.developer-portfolio-overlay{
+    position: absolute;
+    width:37.5%;
+    height: 100%;
+}
+
+.icon-dev-text-container{
+    position: relative;
+    top:37%;
+    
+    text-align: center;
+    transition-duration: 1s;
+}
+
+.dev-overlay-pic{
+    opacity: 0.5;
+    transition-duration: 1s;
+}
+
+#dev{
     text-align: center;
     vertical-align: middle;
     justify-content: center;
     text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
-#photo{
-    position: absolute;
-    top:0;
-    right: 0;
-    width: 37.5%;
+.photographer-portfolio{
+    display: relative;
+    background-image: url(images/ss.jpg);
+    width: 50%;
     height: 100%;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.photo-portfolio-overlay{
+    position: absolute;
+    width:37.5%;
+    height: 100%;
+}
+
+.icon-photo-text-container{
+    position: relative;
+    top:37%;
+    text-align: center;
+    transition-duration: 1s;
+}
+
+.photo-overlay-pic{
+    opacity: 0.5;
+    transition-duration: 1s;
+}
+
+#photo{
     text-align: center;
     vertical-align: middle;
     justify-content: center;
     text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);  
 }
 
-.developer-portfolio{
-    background-image: url(images/matrix.png);
-    background-size: cover;
-    /* flex: 1; */
-    width: 50%;
-    height: 100%;
-    text-decoration: none;
-}
 
-.dev-overlay-pic{
-    opacity: 0.3;
-    transition-duration: 1s;
-    
-}
 
-.icon-text-container{
-    /* opacity: 0.3; */
-    transition-duration: 1s;
-}
-
-/* .photo-overlay-pic{
-    opacity: 0.3;
-    transition-duration: 1s;
-
-} */
-
-.developer-portfolio-overlay{
-    width:100%;
-    height: 100%;
-}
-
-.photo-portfolio-overlay{
-    width:100%;
-    height: 100%;
-}
-
-/* .developer-portfolio:hover, .photographer-portfolio:hover{
-    opacity: 0.5;
-    transition: 0.3s;
-} */
-
-.photographer-portfolio{
-    background-image: url(images/ss.jpg) ;
-    /* flex: 1; */
-    width: 50%;
-    height: 100%;
-    white-space: nowrap;
-    text-decoration: none;
-}
+/* ----- Portfolio END ----- */
 
 
 

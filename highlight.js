@@ -11,6 +11,7 @@ const photoBgContainer = document.getElementsByClassName('photographer-portfolio
 const photoContainerOverlay = document.getElementsByClassName('photo-portfolio-overlay')[0]
 const photoOverlayPic = document.getElementsByClassName('photo-overlay-pic')[0]
 
+
 console.log(devText)
 console.log(photoText)
 console.log(devBgContainer)
@@ -25,11 +26,12 @@ photoBgContainer.addEventListener("mouseout", fadePhotoText);
 function highlightDevText(){
 
     // if (element == "dev"){
-        devOverlayPic.style.opacity = 1
 
         devContainerOverlay.style.transition = "1s"
         devContainerOverlay.style.backgroundColor = "black";
         devContainerOverlay.style.opacity = 0.6
+
+        devOverlayPic.style.opacity = 1
         
         devText.style.transition = "1s";
         devText.style.opacity = 1
@@ -59,10 +61,10 @@ function fadeDevText(){
         devContainerOverlay.style.backgroundColor = "";
         // devContainerOverlay.style.opacity = 0
 
-        devOverlayPic.style.opacity = 0.4
+        devOverlayPic.style.opacity = 0.5
         devOverlayPic.style.transition = "1s"
 
-        devText.style.opacity = 0.4
+        devText.style.opacity = 0.5
         devText.style.textShadow = "0px 0px 0px rgba(0,0,0,.6)"
     // }
     // else{
