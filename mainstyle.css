@@ -11,7 +11,7 @@ h1,h2,h3,h4,h6{
 }
 
 body {
-    background: green;
+    background: #f1f4f8;
     font-family: 'Lato', Helvetica, sans-serif;
     font-weight: 400;
     margin: 0;
@@ -44,17 +44,18 @@ body.parent-home .site-sidebar .main-navigation {
 
 .developer-portfolio{
     display: relative;
-    background-image: url(images/matrix.png);
+    background: url(images/codenew.png) left center no-repeat #910c0c;
     background-size: cover;
     width: 50%;
     height: 100%;
     text-decoration: none;
     text-align: center;
-    
 }
 
 .developer-portfolio-overlay{
+    background-color: rgba(0, 0, 0, 0.541);
     position: absolute;
+    /* transition-duration: 0.1; */
     width:37.5%;
     height: 100%;
 }
@@ -62,17 +63,17 @@ body.parent-home .site-sidebar .main-navigation {
 .icon-dev-text-container{
     position: relative;
     top:37%;
-    
     text-align: center;
     transition-duration: 1s;
 }
 
-.dev-overlay-pic{
+.dev-overlay-pic {
     opacity: 0.5;
     transition-duration: 1s;
 }
 
 #dev{
+    opacity: 0.5;
     text-align: center;
     vertical-align: middle;
     justify-content: center;
@@ -81,7 +82,8 @@ body.parent-home .site-sidebar .main-navigation {
 
 .photographer-portfolio{
     display: relative;
-    background-image: url(images/ss.jpg);
+    background: url(images/rob.jpg) left center no-repeat #910c0c;
+    background-size: cover;
     width: 50%;
     height: 100%;
     white-space: nowrap;
@@ -89,6 +91,7 @@ body.parent-home .site-sidebar .main-navigation {
 }
 
 .photo-portfolio-overlay{
+    background-color: rgba(0, 0, 0, 0.589);
     position: absolute;
     width:37.5%;
     height: 100%;
@@ -107,6 +110,7 @@ body.parent-home .site-sidebar .main-navigation {
 }
 
 #photo{
+    opacity: 0.5;
     text-align: center;
     vertical-align: middle;
     justify-content: center;
