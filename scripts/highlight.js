@@ -82,8 +82,3 @@ function fadePhotoText(){
     photoText.style.opacity = 0.5
     photoText.style.textShadow = "0px 0px 0px rgba(0,0,0,.6)"
 }
-
-// devContainer.addEventListener("mouse")
-
-// devText.style.opacity = 0.9
-// photoText.style.opacity = 0.9

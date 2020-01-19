@@ -44,7 +44,7 @@ body.parent-home .site-sidebar .main-navigation {
 
 .developer-portfolio{
     display: relative;
-    background: url(images/codenew.png) left center no-repeat #910c0c;
+    background: url(images/codenew.png) left center no-repeat;
     background-size: cover;
     width: 50%;
     height: 100%;
@@ -82,7 +82,7 @@ body.parent-home .site-sidebar .main-navigation {
 
 .photographer-portfolio{
     display: relative;
-    background: url(images/rob.jpg) left center no-repeat #910c0c;
+    background: url(images/rob.jpg) left center no-repeat;
     background-size: cover;
     width: 50%;
     height: 100%;
@@ -548,6 +548,10 @@ border-right: 1px solid #cecece;
 .show{
     opacity: 1;
     left:0;
+}
+
+.shown{
+    opacity: 1;
 }
 
 .hide{
