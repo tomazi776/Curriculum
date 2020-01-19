@@ -123,6 +123,38 @@ body.parent-home .site-sidebar .main-navigation {
 
 
 
+/* ----- Portfolio-Photo START ----- */
+.portfolio-container{
+    margin: auto;
+}
+
+.title-portfolio{
+    text-align: center;
+  }
+
+.centered-element-container{
+    height: 100%;
+    margin: auto;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+
+.video-element{
+    padding: 5%;
+}
+
+.icon{
+    font-size: 50px;
+    color: 2c3e50;
+    display: inline-block;
+    margin: auto;
+}
+
+
+/* ----- Portfolio-Photo END ----- */
+
+
 .skills-n-offer-img img{
     margin-left: auto;
     margin-right: auto;
@@ -210,6 +242,7 @@ text-align: center;
 }
 
 .site-main {
+    height: 100%;
     margin-left: 25%;
     text-align: justify;
     display: flex;
@@ -469,6 +502,14 @@ border-right: 1px solid #cecece;
 .current a{
     color: #e64c3c;
     font-weight: 100;
+}
+
+.sublist li::before{
+    content: ">";
+}
+
+.sublist > .current{
+color: #e64c3c;
 }
 
 .person-pic{
