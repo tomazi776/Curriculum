@@ -60,14 +60,15 @@
 
     <div class="site-main">
         <div class="portfolio-container">
-            <h1 class="title-portfolio">Title</h1>
+            <h1 class="align-center">Title</h1>
+            <h2 class="align-center subtitle-portfolio">1/3</h2>
             <div class="centered-element-container">
-                <a class="icon" href=""> <i class="far fa-arrow-alt-circle-left"></i> </a>
-                <iframe class="video-element" width="800" height="451" src="https://www.youtube.com/embed/xczJ6pEpD6s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <a class="icon" href=""><i class="far fa-arrow-alt-circle-right"></i></a>
+                <a onclick="previousVideo()" class="icon"> <i class="far fa-arrow-alt-circle-left"></i> </a>
+                <iframe id="video-element" width="800" height="451" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a onclick="nextVideo()" class="icon"><i class="far fa-arrow-alt-circle-right"></i></a>
             </div>
         </div>
-
     </div>
+    <script src="scripts/carousel.js"></script>
 </body>
 </html>

@@ -128,8 +128,13 @@ body.parent-home .site-sidebar .main-navigation {
     margin: auto;
 }
 
-.title-portfolio{
+.align-center{
     text-align: center;
+  }
+
+  .subtitle-portfolio{
+      font-size: 16px;
+      color: #999;
   }
 
 .centered-element-container{
@@ -140,7 +145,7 @@ body.parent-home .site-sidebar .main-navigation {
     align-items: center;
 }
 
-.video-element{
+#video-element{
     padding: 5%;
 }
 
@@ -149,6 +154,10 @@ body.parent-home .site-sidebar .main-navigation {
     color: 2c3e50;
     display: inline-block;
     margin: auto;
+}
+
+.icon:hover{
+    cursor: pointer;
 }
 
 
