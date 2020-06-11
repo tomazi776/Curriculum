@@ -585,6 +585,13 @@ color: #e64c3c;
     max-width: 100%;
 }
 
+.timeline-workplace-separator{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    margin-left: 160px;
+}
+
 .timeline-contents{
     margin-left: 160px;
     padding: 60px 0;
@@ -592,6 +599,7 @@ color: #e64c3c;
     opacity: 1;
     transition: all 1.2s;
     transition-delay: 0.1s;
+    overflow: hidden;
 }
 
 .timeline-now{
@@ -642,10 +650,16 @@ overflow: hidden;
     margin-left: 30px;
     width: 50%;
     float: left;
+    margin-bottom: 0px;
 }
 
 .workplace-heading{
     margin-bottom: 15px;
+}
+
+.workplace-text li{
+line-height: 20px;
+margin-bottom: 10px;
 }
 
 .workplace-subheading{
@@ -662,8 +676,10 @@ overflow: hidden;
 .workplace-image{   /*change on media*/ 
     /* float: right; */
     /* width: 50%; */
+    height: inherit;
     overflow: hidden;
     text-align: center;
+    vertical-align: middle;
 }
 
 @media screen and (max-width:1410px){

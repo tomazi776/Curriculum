@@ -7,7 +7,7 @@ var videoLinkKeys = Object.keys(videoLinks);
 
 var videoTitle = document.getElementsByClassName("align-center")[0]
 var videoSubtitle = document.getElementsByClassName("align-center")[1]
-var videoTitles = {"calabria": "Wyścig autostopowy Polska - Włochy", "najakiestudia": "Portal z wideo wywiadami - najakiestudia.pl", "highlight": "Tomasz Urbaniak - film promocyjny"} 
+var videoTitles = {"calabria": "Autostop Race Poland - Italy", "najakiestudia": "Student courses video interviews - najakiestudia.pl", "highlight": "Tomasz Urbaniak - a preview"} 
 
 console.log(videoElement.src)
 console.log(videoLinkKeys)
