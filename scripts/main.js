@@ -4,18 +4,14 @@ const aboutPage = "about.html"
 const newestWorkplace = document.getElementsByClassName('timeline-contents');
 
 var intViewportHeight = window.innerHeight;
-var currentWorkplaceInitialVisibility = workplaces[1].className; //Undefined when on other page than skillsandoffer
-// window.onload = onPageLOad();
-
-
+// var currentWorkplaceInitialVisibility = workplaces[1].className; //Undefined when on other page than skillsandoffer
 
 console.log(workplaces.length)
-// console.log(workplaces[0].clientHeight)
 console.log(newestWorkplace)
 console.log(intViewportHeight)
 
 var pagePath = window.location.pathname;
-var pageName = pagePath.split("/").pop();
+const pageName = pagePath.split("/").pop();
 console.log(pageName)
 
 // -----> ABOUT START <----- \\
@@ -42,12 +38,12 @@ function AddEventListenersToPages(){
     }
 }
 
-function onPageLoad() {
-    workplaces[0].className = "timeline-contents timeline-now hide"
-    }
-
 var finished = false;
-onPageLoad();
+
+if(pageName == skillsnofferPage){
+    onPageLoad();
+}
+
 showOnScroll();
 
 function showOnScroll() {   // Change to work JIT on Moblie
@@ -55,30 +51,16 @@ function showOnScroll() {   // Change to work JIT on Moblie
     for (var i = 0; i < workplaces.length; i++) {
         if (oneThirdInViewport(newestWorkplace[i])) {
             setVisibility(i, "show")
-            // if (first(i)) {
-            //     workplaces[i].className = "timeline-contents timeline-now show"
-            // }
-            // else {
-            //     workplaces[i].className = "timeline-contents show"
-            //     // if(last(i)){
-            //     //     finished = true;
-            //     // }
-            // }
         }
         else {
             setVisibility(i, "hide")
-            // if (first(i)) {
-            //     workplaces[i].className = "timeline-contents timeline-now hide"
-            // }
-            // else {
-            //     workplaces[i].className = "timeline-contents hide"
-            // }
         }
-        // if(last(i)){
-        //     finished = true;
-        // }
     }
 };
+
+function onPageLoad() {
+    workplaces[0].className = "timeline-contents timeline-now hide"
+    }
 
 function first(iterator){
     if (iterator == 0){
@@ -104,7 +86,6 @@ function setVisibility(eIndex, showHide){
         }
     }
 };
-
 
 function oneThirdInViewport(element) {
     let bounds = element.getBoundingClientRect();
