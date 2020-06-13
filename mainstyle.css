@@ -626,6 +626,12 @@ color: #e64c3c;
     left: -100%;
 }
 
+.hidden{
+    transition: all 1.2s;
+    transition-delay: 0.1s;
+    opacity: 0;
+}
+
 .shadow-headline{
     text-shadow: 2px 2px 2px rgba(0,0,0,.6);
 }

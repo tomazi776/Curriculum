@@ -2,7 +2,7 @@ const workplaces = Array.from(document.getElementsByClassName('timeline-contents
 const skillsnofferPage = "skillsnoffer.html"
 const aboutPage = "about.html"
 const newestWorkplace = document.getElementsByClassName('timeline-contents');
-
+const firstLoad = true;
 var intViewportHeight = window.innerHeight;
 // var currentWorkplaceInitialVisibility = workplaces[1].className; //Undefined when on other page than skillsandoffer
 
@@ -13,6 +13,7 @@ console.log(intViewportHeight)
 var pagePath = window.location.pathname;
 const pageName = pagePath.split("/").pop();
 console.log(pageName)
+
 
 // -----> ABOUT START <----- \\
 
@@ -59,7 +60,13 @@ function showOnScroll() {   // Change to work JIT on Moblie
 };
 
 function onPageLoad() {
-    workplaces[0].className = "timeline-contents timeline-now hide"
+    if(oneThirdInViewport(newestWorkplace[0])){
+        setVisibility(0, "show")
+    }
+    else{
+        setVisibility(0, "hide")
+
+    }
     }
 
 function first(iterator){
