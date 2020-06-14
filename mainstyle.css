@@ -188,7 +188,7 @@ body.parent-home .site-sidebar .main-navigation {
     position: fixed;
     overflow: hidden;
     z-index: 2;
-    width: 25%;
+    width: 25vw;
     font-size: 14px;
     color: #fff;
     text-align: left;
@@ -261,7 +261,7 @@ text-align: center;
 
 .site-main {
     height: 100%;
-    margin-left: 25%;
+    margin-left: 25vw;
     text-align: justify;
     display: flex;
     align-items: center;
@@ -280,7 +280,7 @@ text-align: center;
     right: auto;
     content: " ";
     display: block;
-    width: 25%;
+    width: 25vw;
     background: url(images/homebg.jpg) top center no-repeat #910c0c;
     background-size: auto;
     background-size: cover;
@@ -362,6 +362,7 @@ margin-left: -50px;
 
 .main-container{
     /* margin: 50px; */
+    left:0;
     padding: 50px;
     /* width: 90%; */
 }
@@ -463,6 +464,15 @@ border-right: 1px solid #cecece;
     font-weight: 500;
 }
 
+.header-styled-href{
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-size: 2.5em;
+    font-weight: 300;
+    text-transform: none;
+    text-decoration: none;
+}
+
 .home-section .home-subheadline{
     font-size: 3em;
     font-weight: 300;
@@ -497,15 +507,6 @@ border-right: 1px solid #cecece;
 
 .navigation-extended-bar{
     margin-top: 35px;
-}
-
-.linked-text a{
-    color: rgb(255, 255, 255);
-}
-
-.linked-text a:hover{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
 }
 
 .nav-text a{
