@@ -280,8 +280,9 @@ text-align: center;
     right: auto;
     content: " ";
     display: block;
+    height: 110vh;
     width: 25vw;
-    background: url(images/homebg.jpg) top center no-repeat #910c0c;
+    background: url(images/japetra.jpg) top center no-repeat #910c0c;
     background-size: auto;
     background-size: cover;
 }
@@ -345,7 +346,7 @@ text-align: center;
     left: 0;
     right: 0;
     z-index: 1;
-    background: url(images/homebg.jpg) top center no-repeat #bababa;
+    background: url(images/japetra.jpg) top center no-repeat #bababa;
     background-size: auto;
     background-size: cover;
     -webkit-font-smoothing: antialiased;
@@ -687,6 +688,10 @@ margin-bottom: 10px;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
+}
+
+.cv-container{
+    border: 5px solid black; 
 }
 
 @media screen and (max-width:1410px){
