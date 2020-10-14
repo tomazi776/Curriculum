@@ -1,19 +1,33 @@
 /** @type {HTMLElement} */
 const next = "next"
 const previous = "previous"
-var videoLinks = {"calabria": "https://www.youtube.com/embed/xczJ6pEpD6s", "najakiestudia": "https://www.youtube.com/embed/UCrBYuf9RmI", "highlight": "https://www.youtube.com/embed/3lfsE8MjNFs"}
+var videoLinks = {
+    "calabria": "https://www.dailymotion.com/embed/video/x7ux3iq",
+    "najakiestudia": "https://www.youtube.com/embed/UCrBYuf9RmI",
+    "highlight": "https://www.youtube.com/embed/3lfsE8MjNFs",
+    "gren": "https://www.dailymotion.com/embed/video/x7ux6jm",
+    "oslo": "https://www.dailymotion.com/embed/video/x6edrp7"
+}
 var videoElement = document.getElementById('video-element')
 var videoLinkKeys = Object.keys(videoLinks);
 
 var videoTitle = document.getElementsByClassName("align-center")[0]
 var videoSubtitle = document.getElementsByClassName("align-center")[1]
-var videoTitles = {"calabria": "Autostop Race Poland - Italy", "najakiestudia": "Student courses video interviews - najakiestudia.pl", "highlight": "Tomasz Urbaniak - a preview"} 
+var videoTitles = {
+    "calabria": "Autostop Race Poland - Italy", 
+    "najakiestudia": "Student courses video interviews - najakiestudia.pl", 
+    "highlight": "Tomasz Urbaniak - a preview",
+    "gren": "GREN - Real life strategy game based on RPG",
+    "oslo": "Oslo - backpacker perspective"
+} 
 
-console.log(videoElement.src)
-console.log(videoLinkKeys)
+// console.log(videoElement.src)
+// console.log(videoLinkKeys)
+// console.log(videoLinkKeys)
+
 
 setInitialVideoSource()
-console.log(videoElement.src)
+// console.log(videoElement.src)
 
 var increment = 0
 function changeVideoSource(direction){
@@ -37,7 +51,14 @@ function changeVideoSource(direction){
     if(nextVideoLink != currentVideoLink){
         videoElement.src = nextVideoLink
         setVideoTitleInfo(nextVideoTitle)
-        setVideoSubTitleInfo(increment + 1)
+
+        if(direction == next){
+            setVideoSubTitleInfo(increment + 1)
+        }
+        else{
+            setVideoSubTitleInfo(increment - 1)
+
+        }
     }
     console.log(videoElement.src)
 }
@@ -53,7 +74,7 @@ function setVideoTitleInfo(videoKeyName){
 }
 
 function setVideoSubTitleInfo(index){
-    videoSubtitle.textContent = index + "/3"
+    videoSubtitle.textContent = index + "/5"
 }
 
 function nextVideo(){
