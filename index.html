@@ -16,7 +16,7 @@
         <div class="site-sidebar-inner">
             <a class="person" href="index.html">
                 <div class="person-avatar">
-                    <img src="images/jam.png" class="avatar" alt="portrait image"/>
+                    <img src="images/jam.png" class="avatar"/>
                 </div>
                 <div>
                     <h1 class="person-title">Tomasz Urbaniak</h1>
@@ -26,24 +26,56 @@
             <nav class="block main-navigation nav-text">
                 <div class="navigation-extended-bar">
                     <ul>
-                        <li class="">
+                        <li class="" id="skillsNav">
                             <a href="skillsnoffer.html">Skills &amp;  Offer</a>
                         </li>
-                        <li class="">
+                        <li class="" id="aboutNav">
                             <a href="about.html">About</a>
                         </li>
-                        <li class="">
+                        <li class="" id="contactNav">
                             <a href="contact.html">Contact</a>
                         </li>
                         <!-- <li>
                             <a href="portfolio.html">Portfolio</a> 
                         </li> -->
-                        <li>
+                        <li id="cvNav">
                             <a href="cv.html">CV</a> 
                         </li>
                     </ul>
                 </div>
             </nav>
+            <nav role="navigation" id="dynamicNavBar">
+                <div id="menuToggle">
+                  <!--
+                  A fake / hidden checkbox is used as click reciever,
+                  so you can use the :checked selector on it.
+                  -->
+                  <input type="checkbox" />
+                  
+                  <!--
+                  Some spans to act as a hamburger.
+                  
+                  They are acting like a real hamburger,
+                  not that McDonalds stuff.
+                  -->
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                  <!--
+                  Too bad the menu has to be inside of the button
+                  but hey, it's pure CSS magic.
+                  -->
+                  <ul id="menu">
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li>Info</li></a>
+                    <a href="#"><li>Contact</li></a>
+                    <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+                  </ul>
+                </div>
+              </nav>
+
         </div>
     </aside>
         <div class="site-main">
@@ -51,7 +83,7 @@
                 <div class="home-section">
                     <div class="home-section-inner shadow-headline">
                         <div class="home-headline">Hello, I'm Tom</div>
-                        <h2 class="home-subheadline">I build websites &amp; mobile apps</h2>
+                        <h2 class="home-subheadline">I build apps</h2>
                     </div>
                 </div>
             </div>
