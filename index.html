@@ -12,8 +12,9 @@
     <link href="mainstyle.css" rel="stylesheet"/>
 </head>
 <body class="parent-home">
-    <aside class="site-sidebar">
+    <aside class="site-sidebar" id="dynamicAside">
         <div class="site-sidebar-inner">
+            
             <a class="person" href="index.html">
                 <div class="person-avatar">
                     <img src="images/jam.png" class="avatar"/>
@@ -23,7 +24,13 @@
                     <h2 class="person-subtitle">Software developer</h2>
                 </div>
             </a>
+            <div class="buttonContainer" onclick="onHamburgerBtnClicked()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <nav class="block main-navigation nav-text">
+
                 <div class="navigation-extended-bar">
                     <ul>
                         <li class="" id="skillsNav">
@@ -44,28 +51,16 @@
                     </ul>
                 </div>
             </nav>
-            <nav role="navigation" id="dynamicNavBar">
+            <!-- <nav role="navigation" id="dynamicNavBar">
                 <div id="menuToggle">
-                  <!--
-                  A fake / hidden checkbox is used as click reciever,
-                  so you can use the :checked selector on it.
-                  -->
-                  <input type="checkbox" />
+
+                  <input type="checkbox" id="navigationExpander"/>
                   
-                  <!--
-                  Some spans to act as a hamburger.
-                  
-                  They are acting like a real hamburger,
-                  not that McDonalds stuff.
-                  -->
+
                   <span></span>
                   <span></span>
                   <span></span>
-                  
-                  <!--
-                  Too bad the menu has to be inside of the button
-                  but hey, it's pure CSS magic.
-                  -->
+
                   <ul id="menu">
                     <a href="#"><li>Home</li></a>
                     <a href="#"><li>About</li></a>
@@ -74,7 +69,7 @@
                     <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
                   </ul>
                 </div>
-              </nav>
+              </nav> -->
 
         </div>
     </aside>
@@ -88,5 +83,23 @@
                 </div>
             </div>
         </div>
+        <!-- <script>
+            const hamburgerBtn = document.getElementById("navigationExpander");
+            const navigation = document.getElementsByClassName("site-sidebar");
+
+            // let checkboxElem = <HTMLInputElement> document.getElementById("navigationExpander");
+            //     checkboxElem.
+
+            let chk = document.createElement('input')
+                chk.type='checkbox'
+
+                let aside = document.createElement('aside')
+                
+
+            if(hamburgerBtn.checked = true){
+                chk.che
+            }
+        </script> -->
+        <script src="scripts/index.js" type="application/javascript"></script>
 </body>
 </html>

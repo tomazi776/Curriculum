@@ -18,7 +18,7 @@
 
 </head>
 <body class="parent-home">
-    <aside class="site-sidebar">
+    <aside class="site-sidebar" id="dynamicAside">
         <div class="site-sidebar-inner">
             <a class="person" href="index.html">
                 <div class="person-avatar">
@@ -29,22 +29,27 @@
                     <h2 class="person-subtitle">Software developer</h2>
                 </div>
             </a>
+            <div class="buttonContainer" onclick="onHamburgerBtnClicked()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <nav class="block main-navigation nav-text">
                 <div class="navigation-extended-bar">
                     <ul>
-                        <li class="">
+                        <li class="" id="skillsNav">
                             <a href="skillsnoffer.html">Skills &amp;  Offer</a>
                         </li>
-                        <li class="">
+                        <li class="" id="aboutNav">
                             <a href="about.html">About</a>
                         </li>
-                        <li class="current">
+                        <li class="current" id="contactNav">
                             <a href="contact.html">Contact</a>
                         </li>
                         <!-- <li>
                             <a href="portfolio.html">Portfolio</a> 
                         </li> -->
-                        <li>
+                        <li id="cvNav">
                             <a href="cv.html">CV</a> 
                         </li>
                     </ul>
@@ -75,5 +80,6 @@
                 </div>
             </div>
         </div>
+        <script src="scripts/index.js" type="application/javascript"></script>
 </body>
 </html>

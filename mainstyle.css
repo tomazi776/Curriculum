@@ -207,7 +207,6 @@ body.parent-home .site-sidebar .main-navigation {
 .site-sidebar-inner{
     position: relative;
     height: 100%;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     padding: 45px 40px;
@@ -690,7 +689,14 @@ margin-bottom: 10px;
 }
 
 .cv-container{
-    border: 5px solid black; 
+    width: 50%; 
+    height: auto; 
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25%; 
+    -webkit-box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
+    box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
 }
 
 @media screen and (max-width:1440px){
@@ -757,9 +763,28 @@ margin-bottom: 10px;
     display: inline;
 } */
 
-#skillsNav, #aboutNav, #contactNav{
-margin-right: 20px;
+#skillsNav, #aboutNav, #contactNav, #cvNav{
+opacity: 0;
 }
+
+.home-section .home-section-inner{
+    margin-top: 35vw;
+    margin-left: 0px;
+    position: absolute;
+    width: 90vw;
+}
+
+.home-section{
+padding: 5vw;
+}
+
+
+
+
+
+/* .shadow-headline{
+    margin 0px;
+} */
 
 .person-title{
     font-size: 2.2vw;
@@ -774,152 +799,90 @@ margin-right: 20px;
     font-size: 4.5vw;
 }
 
+.person{
+    width: 80vw;
+}
 
+.main-navigation{
+    margin:auto;
+    width: max-content;
+}
+.main-navigation li{
+    text-align: center;
 
+}
 
-#dynamicNavBar{
-    top:0;
-    right: 10vw;
+.buttonContainer {
+    top:10vw;
+    margin-left: 85vw;
+    margin-top: 0px;
+    width: 15vw;
+    
     position: absolute;
-
-}
-
-#menuToggle
-{
-display: block;
-position: relative;
-top: 50px;
-left: 50px;
-
-z-index: 1;
-
--webkit-user-select: none;
-user-select: none;
-}
-
-#menuToggle a
-{
-    text-decoration: none;
-    color: #232323;
-    transition: color 0.3s ease;
-}
-
-/* #menuToggle a:hover
-{
-    color: tomato;
-} */
-
-
-#menuToggle input
-{
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
     cursor: pointer;
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-    -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span
-{
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #cdcdcd;
-    border-radius: 3px;
-    z-index: 1;
-    transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-    transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-    transform-origin: 0% 100%;
-}
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #ededed;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+  }
   
-    transform: rotate(-45deg) translate(0, -1px);
-}
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu
-{
-    top: 100px;
+  .cv-container{
+    margin-top: 35vw;
+    width: 96vw; 
+    height: auto; 
     position: absolute;
-    width: 300px;
-    /* margin: -100px -15px 0 0px; */
-    padding: 50px;
-    padding-top: 125px;
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-    transform-origin: 0% 0%;
-    transform: translate(-100%, +20%);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    margin-left: 2vw;
+    -webkit-box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
+    box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.52);
+  }
+
+  .home-headline, .home-subheadline{
+      margin-left: 2vw;
+  }
+
+  .about-caption{
+      margin-right: 9vw;
+  }
+
+.header-styled-href{
+    font-size: 4.8vw;
+    margin-left: 5vw;
 }
 
-#menu li
-{
-    padding: 10px 0;
-    font-size: 22px;
+.site-main::before {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    content: " ";
+    display: block;
+    height: 110vh;
+    width: 25vw;
+    background: url(images/japetra.jpg) top center no-repeat #910c0c;
+    background-size: auto;
+    background-size: cover;
 }
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
-    transform: none;
-}
-
-
-
-
-
 
     
 }

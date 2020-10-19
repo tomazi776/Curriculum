@@ -3,14 +3,55 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Tomasz Urbaniak - CV</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='mainstyle.css'>
     <script src='main.js'></script>
 </head>
-<body style="margin-top: 0; margin-bottom: 0;">
-    <div >
-        <img class="cv-container" style="width: 50%; height: auto; margin-left: 25%; margin-top: 0; " src="images/Tomasz Urbaniak CV ENG Longer.png"/>
-    </div>
+<body class="parent-home">
+    <aside class="site-sidebar" id="dynamicAside">
+        <div class="site-sidebar-inner">
+            <a class="person" href="index.html">
+                <div class="person-avatar">
+                    <img src="images/jam.png" class="avatar" alt="portrait image"/>
+                </div>
+                <div>
+                    <h1 class="person-title">Tomasz Urbaniak</h1>
+                    <h2 class="person-subtitle">Software developer</h2>
+                </div>
+            </a>
+            <div class="buttonContainer" onclick="onHamburgerBtnClicked()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <nav class="block main-navigation nav-text">
+                <div class="navigation-extended-bar">
+                    <ul>
+                        <li class="" id="skillsNav">
+                            <a href="skillsnoffer.html">Skills &amp;  Offer</a>
+                        </li>
+                        <li class="" id="aboutNav">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li id="contactNav">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <!-- <li>
+                            <a href="portfolio.html">Portfolio</a> 
+                        </li> -->
+                        <li class="current"  id="cvNav">
+                            <a href="cv.html">CV</a> 
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </aside>
+        <img class="cv-container" src="images/Tomasz Urbaniak CV ENG Longer.png"/>
+        <script src="scripts/index.js" type="application/javascript"></script>
 </body>
 </html>
