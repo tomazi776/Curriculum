@@ -1,9 +1,12 @@
 var navigation = document.getElementById("dynamicAside");
 var expanderBtn = document.getElementsByClassName("buttonContainer")[0];
+var homeSectionInner = document.getElementsByClassName("home-section-inner")[0];
+var pageHomeSectionContentTopMargin = homeSectionInner.style.marginTop;
 var skillsNav = document.getElementById("skillsNav");
 var aboutNav = document.getElementById("aboutNav");
 var contactNav = document.getElementById("contactNav");
 var cvNav = document.getElementById("cvNav");
+var navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20; // Y
 var pageTitle = document.head.title;
 window.addEventListener('resize', onPageWidthChanged);
 var hamBtnChecked = false;
@@ -12,21 +15,25 @@ function onHamburgerBtnClicked() {
     hamBtnChecked = !hamBtnChecked;
     var visibility = hamBtnChecked;
     if (hamBtnChecked == true) {
-        setNavHeight(60);
+        var navheight = convertPXToVW(navMaxBorder);
+        setNavHeight(navheight);
         setNavElementsVisibilityTo(visibility);
-        // homeSectionInner.style.marginTop = '60vw'
-        // homeSectionInner.style.transitionDuration = '0.6s'
+        setElementTopMargin(homeSectionInner, navheight);
     }
     else {
         setNavHeight(25);
         setNavElementsVisibilityTo(visibility);
-        // homeSectionInner.style.marginTop = '35vw'
-        // homeSectionInner.style.transitionDuration = '0.6s'
+        homeSectionInner.style.marginTop = '35vw';
+        homeSectionInner.style.transitionDuration = '0.7s';
     }
 }
 function setNavHeight(height) {
     navigation.style.height = height + 'vw';
     navigation.style.transitionDuration = '0.5s';
+}
+function setElementTopMargin(element, height) {
+    element.style.marginTop = height + 'vw';
+    element.style.transitionDuration = '0.7s';
 }
 function setNavElementsVisibilityTo(visible) {
     if (visible) {
@@ -55,6 +62,7 @@ function onPageWidthChanged() {
     if (width > 1200) {
         setNavHeight(60);
         setNavElementsVisibilityTo(true);
+        resetPageHomeSectionMargin();
     }
     else {
         if (hamBtnChecked == false) {
@@ -63,9 +71,16 @@ function onPageWidthChanged() {
         }
     }
 }
+function resetPageHomeSectionMargin() {
+    homeSectionInner.style.marginTop = pageHomeSectionContentTopMargin;
+    homeSectionInner.style.transitionDuration = '0.7s';
+}
 function hideNavOnCvPage() {
     if (screen.width > 1440) {
         navigation.remove();
     }
+}
+function convertPXToVW(px) {
+    return px * (100 / document.documentElement.clientWidth);
 }
 //# sourceMappingURL=index.js.map
