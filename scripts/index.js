@@ -2,23 +2,35 @@ var navigation = document.getElementById("dynamicAside");
 var expanderBtn = document.getElementsByClassName("buttonContainer")[0];
 var currentPageTitle = document.title;
 var underNavContainer;
-var pageHomeSectionContentTopMargin;
-if (currentPageTitle != "Skills & Offer") {
-    underNavContainer = document.getElementsByClassName("home-section-inner")[0];
-    pageHomeSectionContentTopMargin = underNavContainer.style.marginTop;
+var underNavContainerTopMargin;
+configureBasedOnPage();
+function configureBasedOnPage() {
+    if (hasMobileNav(currentPageTitle)) {
+        configureMobileNavViewElements();
+    }
 }
-else {
-    underNavContainer = document.getElementsByClassName("main-section")[0];
-    pageHomeSectionContentTopMargin = underNavContainer.style.marginTop;
-    if (document.body.clientWidth < 1200) {
-        setElementTopMargin(underNavContainer, 25);
-        changeHTMLTag();
+function hasMobileNav(pageTitle) {
+    return currentPageTitle != "Tomasz Urbaniak - CV";
+}
+function configureMobileNavViewElements() {
+    if (currentPageTitle != "Skills & Offer") {
+        underNavContainer = document.getElementsByClassName("home-section-inner")[0];
+        underNavContainerTopMargin = underNavContainer.style.marginTop;
+    }
+    else {
+        underNavContainer = document.getElementsByClassName("main-section")[0];
+        underNavContainerTopMargin = underNavContainer.style.marginTop;
+        if (document.body.clientWidth < 1200) {
+            setElementTopMargin(underNavContainer, 25);
+            changeHTMLTag();
+        }
     }
 }
 var skillsNav = document.getElementById("skillsNav");
 var aboutNav = document.getElementById("aboutNav");
 var contactNav = document.getElementById("contactNav");
 var cvNav = document.getElementById("cvNav");
+var menuElements = [skillsNav, aboutNav, contactNav, cvNav];
 // let navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20  // Y
 var navMaxBorder = window.scrollY + cvNav.getBoundingClientRect().bottom + 20; // Y
 window.addEventListener('resize', onPageWidthChanged);
@@ -84,7 +96,7 @@ function onPageWidthChanged() {
     }
 }
 function resetPageHomeSectionMargin() {
-    underNavContainer.style.marginTop = pageHomeSectionContentTopMargin;
+    underNavContainer.style.marginTop = underNavContainerTopMargin;
     underNavContainer.style.transitionDuration = '0.7s';
 }
 function hideNavOnCvPage() {

@@ -3,17 +3,32 @@
             let currentPageTitle = <string>document.title
 
             let underNavContainer
-            let pageHomeSectionContentTopMargin
-            if(currentPageTitle != "Skills & Offer"){
-                underNavContainer = <HTMLElement>document.getElementsByClassName("home-section-inner")[0]
-                pageHomeSectionContentTopMargin = underNavContainer.style.marginTop
+            let underNavContainerTopMargin
+
+            configureBasedOnPage()
+
+            function configureBasedOnPage(){
+                if(hasMobileNav(currentPageTitle)){
+                    configureMobileNavViewElements()
+                }
             }
-            else{
-                underNavContainer = <HTMLElement>document.getElementsByClassName("main-section")[0]
-                pageHomeSectionContentTopMargin = underNavContainer.style.marginTop
-                if(document.body.clientWidth < 1200){
-                    setElementTopMargin(underNavContainer, 25)
-                    changeHTMLTag()
+
+            function hasMobileNav(pageTitle: string) : boolean{
+                return currentPageTitle != "Tomasz Urbaniak - CV"
+            }
+
+            function configureMobileNavViewElements(){
+                if(currentPageTitle != "Skills & Offer"){
+                    underNavContainer = <HTMLElement>document.getElementsByClassName("home-section-inner")[0]
+                    underNavContainerTopMargin = underNavContainer.style.marginTop
+                }
+                else{
+                    underNavContainer = <HTMLElement>document.getElementsByClassName("main-section")[0]
+                    underNavContainerTopMargin = underNavContainer.style.marginTop
+                    if(document.body.clientWidth < 1200){
+                        setElementTopMargin(underNavContainer, 25)
+                        changeHTMLTag()
+                    }
                 }
             }
 
@@ -22,9 +37,10 @@
             let contactNav = <HTMLElement>document.getElementById("contactNav");
             let cvNav = <HTMLElement>document.getElementById("cvNav");
 
+            let menuElements = [skillsNav, aboutNav, contactNav, cvNav]
+
             // let navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20  // Y
             let navMaxBorder = window.scrollY + cvNav.getBoundingClientRect().bottom + 20  // Y
-
 
             window.addEventListener('resize', onPageWidthChanged);
 
@@ -106,7 +122,7 @@
             }
 
             function resetPageHomeSectionMargin(){
-                underNavContainer.style.marginTop = pageHomeSectionContentTopMargin
+                underNavContainer.style.marginTop = underNavContainerTopMargin
                 underNavContainer.style.transitionDuration = '0.7s'
             }
 

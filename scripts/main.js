@@ -6,14 +6,9 @@ const firstLoad = true;
 var intViewportHeight = window.innerHeight;
 // var currentWorkplaceInitialVisibility = workplaces[1].className; //Undefined when on other page than skillsandoffer
 
-console.log(workplaces.length)
-console.log(newestWorkplace)
-console.log(intViewportHeight)
 
 var pagePath = window.location.pathname;
 const pageName = pagePath.split("/").pop();
-console.log(pageName)
-
 
 // -----> ABOUT START <----- \\
 
