@@ -1,17 +1,30 @@
             let navigation = <HTMLElement> document.getElementById("dynamicAside");
             let expanderBtn = <HTMLElement>document.getElementsByClassName("buttonContainer")[0]
-            let homeSectionInner = <HTMLElement>document.getElementsByClassName("home-section-inner")[0]
-            let pageHomeSectionContentTopMargin = homeSectionInner.style.marginTop
+            let currentPageTitle = <string>document.title
+
+            let underNavContainer
+            let pageHomeSectionContentTopMargin
+            if(currentPageTitle != "Skills & Offer"){
+                underNavContainer = <HTMLElement>document.getElementsByClassName("home-section-inner")[0]
+                pageHomeSectionContentTopMargin = underNavContainer.style.marginTop
+            }
+            else{
+                underNavContainer = <HTMLElement>document.getElementsByClassName("main-section")[0]
+                pageHomeSectionContentTopMargin = underNavContainer.style.marginTop
+                if(document.body.clientWidth < 1200){
+                    setElementTopMargin(underNavContainer, 25)
+                    changeHTMLTag()
+                }
+            }
 
             let skillsNav = <HTMLElement>document.getElementById("skillsNav");
             let aboutNav = <HTMLElement>document.getElementById("aboutNav");
             let contactNav = <HTMLElement>document.getElementById("contactNav");
             let cvNav = <HTMLElement>document.getElementById("cvNav");
 
-            let navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20  // Y
+            // let navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20  // Y
+            let navMaxBorder = window.scrollY + cvNav.getBoundingClientRect().bottom + 20  // Y
 
-
-            let pageTitle = <string>document.head.title
 
             window.addEventListener('resize', onPageWidthChanged);
 
@@ -25,14 +38,12 @@
                     var navheight = convertPXToVW(navMaxBorder)
                     setNavHeight(navheight)
                     setNavElementsVisibilityTo(visibility)
-                    setElementTopMargin(homeSectionInner,navheight)
+                    setElementTopMargin(underNavContainer,navheight)
                 }
                 else{
                     setNavHeight(25)
                     setNavElementsVisibilityTo(visibility)
-
-                    homeSectionInner.style.marginTop = '35vw'
-                    homeSectionInner.style.transitionDuration = '0.7s'
+                    setElementTopMargin(underNavContainer, 25)
                 }
             }
 
@@ -43,7 +54,8 @@
 
             function setElementTopMargin(element : HTMLElement, height : number){
                 element.style.marginTop = height + 'vw'
-                element.style.transitionDuration = '0.7s'
+                element.style.transitionDuration = '0.5s'
+
             }
 
             function setNavElementsVisibilityTo(visible: boolean){
@@ -94,15 +106,18 @@
             }
 
             function resetPageHomeSectionMargin(){
-                homeSectionInner.style.marginTop = pageHomeSectionContentTopMargin
-                homeSectionInner.style.transitionDuration = '0.7s'
+                underNavContainer.style.marginTop = pageHomeSectionContentTopMargin
+                underNavContainer.style.transitionDuration = '0.7s'
             }
 
             function hideNavOnCvPage(){
-                if(screen.width > 1440)
-                {
-                    navigation.remove()
-                }
+                navigation.remove()
+            }
+
+            function changeHTMLTag()
+            {
+                var el = document.querySelector('.workplaces-title h2');
+                el.outerHTML = '<h3>' + el.innerHTML + '</h3>';
             }
 
             function convertPXToVW(px) {

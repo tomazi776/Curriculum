@@ -1,13 +1,26 @@
 var navigation = document.getElementById("dynamicAside");
 var expanderBtn = document.getElementsByClassName("buttonContainer")[0];
-var homeSectionInner = document.getElementsByClassName("home-section-inner")[0];
-var pageHomeSectionContentTopMargin = homeSectionInner.style.marginTop;
+var currentPageTitle = document.title;
+var underNavContainer;
+var pageHomeSectionContentTopMargin;
+if (currentPageTitle != "Skills & Offer") {
+    underNavContainer = document.getElementsByClassName("home-section-inner")[0];
+    pageHomeSectionContentTopMargin = underNavContainer.style.marginTop;
+}
+else {
+    underNavContainer = document.getElementsByClassName("main-section")[0];
+    pageHomeSectionContentTopMargin = underNavContainer.style.marginTop;
+    if (document.body.clientWidth < 1200) {
+        setElementTopMargin(underNavContainer, 25);
+        changeHTMLTag();
+    }
+}
 var skillsNav = document.getElementById("skillsNav");
 var aboutNav = document.getElementById("aboutNav");
 var contactNav = document.getElementById("contactNav");
 var cvNav = document.getElementById("cvNav");
-var navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20; // Y
-var pageTitle = document.head.title;
+// let navMaxBorder = window.scrollY + document.querySelector('#cvNav').getBoundingClientRect().bottom + 20  // Y
+var navMaxBorder = window.scrollY + cvNav.getBoundingClientRect().bottom + 20; // Y
 window.addEventListener('resize', onPageWidthChanged);
 var hamBtnChecked = false;
 function onHamburgerBtnClicked() {
@@ -18,13 +31,12 @@ function onHamburgerBtnClicked() {
         var navheight = convertPXToVW(navMaxBorder);
         setNavHeight(navheight);
         setNavElementsVisibilityTo(visibility);
-        setElementTopMargin(homeSectionInner, navheight);
+        setElementTopMargin(underNavContainer, navheight);
     }
     else {
         setNavHeight(25);
         setNavElementsVisibilityTo(visibility);
-        homeSectionInner.style.marginTop = '35vw';
-        homeSectionInner.style.transitionDuration = '0.7s';
+        setElementTopMargin(underNavContainer, 25);
     }
 }
 function setNavHeight(height) {
@@ -33,7 +45,7 @@ function setNavHeight(height) {
 }
 function setElementTopMargin(element, height) {
     element.style.marginTop = height + 'vw';
-    element.style.transitionDuration = '0.7s';
+    element.style.transitionDuration = '0.5s';
 }
 function setNavElementsVisibilityTo(visible) {
     if (visible) {
@@ -72,13 +84,15 @@ function onPageWidthChanged() {
     }
 }
 function resetPageHomeSectionMargin() {
-    homeSectionInner.style.marginTop = pageHomeSectionContentTopMargin;
-    homeSectionInner.style.transitionDuration = '0.7s';
+    underNavContainer.style.marginTop = pageHomeSectionContentTopMargin;
+    underNavContainer.style.transitionDuration = '0.7s';
 }
 function hideNavOnCvPage() {
-    if (screen.width > 1440) {
-        navigation.remove();
-    }
+    navigation.remove();
+}
+function changeHTMLTag() {
+    var el = document.querySelector('.workplaces-title h2');
+    el.outerHTML = '<h3>' + el.innerHTML + '</h3>';
 }
 function convertPXToVW(px) {
     return px * (100 / document.documentElement.clientWidth);
