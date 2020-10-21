@@ -6,10 +6,12 @@
     <title>Skills &amp; Offer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
+
     <link href="mainstyle.css" rel="stylesheet"/>
 </head>
 <body class="parent-home">
-    <aside class="site-sidebar">
+    <aside class="site-sidebar" id="dynamicAside">
         <div class="site-sidebar-inner">
             <a class="person" href="index.html">
                 <div class="person-avatar">
@@ -20,22 +22,27 @@
                     <h2 class="person-subtitle">Software developer</h2>
                 </div>
             </a>
+            <div class="buttonContainer" onclick="onHamburgerBtnClicked()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <nav class="main-navigation nav-text">
                 <div class="navigation-extended-bar">
                     <ul>
-                        <li class="current">
+                        <li class="current" id="skillsNav">
                             <a href="skillsnoffer.html">Skills &amp;  Offer</a>
                         </li>
-                        <li class="">
+                        <li class="" id="aboutNav">
                             <a href="about.html">About</a>
                         </li>
-                        <li class="">
+                        <li class="" id="contactNav">
                             <a href="contact.html">Contact</a>
                         </li>
                         <!-- <li>
                                 <a href="portfolio.html">Portfolio</a>
                         </li> -->
-                        <li>
+                        <li id="cvNav">
                             <a href="cv.html">CV</a> 
                         </li>
                     </ul>
@@ -62,7 +69,7 @@
 
                 <div class="workplaces">
                     <div class="workplaces-title">
-                            <img style="margin-left: 90px;  float: left;" width="60" height="60" src="images/atom-icon.png"/>
+                            <img  width="60" height="60" src="images/atom-icon.png"/>
                             <h2 style="color:#e64c3c; line-height: 60px; margin-left: 25px;  font-size: 40px; float: left;">Work experience</h2>
                     </div>
                     <ul>
@@ -194,5 +201,7 @@
             </div>
     </div>
 <script src="scripts/main.js"></script>
+<script src="scripts/index.js" type="application/javascript"></script>
+
 </body>
 </html>

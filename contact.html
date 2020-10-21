@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta name="description" content="Tomasz Urbaniak - freelance software developer online cirriculum">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
+
     <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 
     <meta name="keywords" content="software developer programmer freelancer">
@@ -18,7 +20,7 @@
 
 </head>
 <body class="parent-home">
-    <aside class="site-sidebar">
+    <aside class="site-sidebar" id="dynamicAside">
         <div class="site-sidebar-inner">
             <a class="person" href="index.html">
                 <div class="person-avatar">
@@ -29,22 +31,27 @@
                     <h2 class="person-subtitle">Software developer</h2>
                 </div>
             </a>
+            <div class="buttonContainer" onclick="onHamburgerBtnClicked()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <nav class="block main-navigation nav-text">
                 <div class="navigation-extended-bar">
                     <ul>
-                        <li class="">
+                        <li class="" id="skillsNav">
                             <a href="skillsnoffer.html">Skills &amp;  Offer</a>
                         </li>
-                        <li class="">
+                        <li class="" id="aboutNav">
                             <a href="about.html">About</a>
                         </li>
-                        <li class="current">
+                        <li class="current" id="contactNav">
                             <a href="contact.html">Contact</a>
                         </li>
                         <!-- <li>
                             <a href="portfolio.html">Portfolio</a> 
                         </li> -->
-                        <li>
+                        <li id="cvNav">
                             <a href="cv.html">CV</a> 
                         </li>
                     </ul>
@@ -60,20 +67,21 @@
                             <a class="header-styled-href" href="mailto:tomaszurbaniak776@gmail.com" >
                                 <i style="margin-top: 50px; margin-left: 20px;" class="fa fa-envelope" aria-hidden="true" title="email"></i>
                             </a>
-                            <span class="header-styled-href"> tomaszurbaniak776@gmail.com</span>
+                            <span class="header-styled-href"> <a href="mailto:tomaszurbaniak776@gmail.com" style="text-decoration: none; color: white;">tomaszurbaniak776@gmail.com</a> </span>
                                 <br/>
                             <a class="header-styled-href" href="https://www.linkedin.com/in/tomasz-urbaniak-31b2a01b1/" >
                                 <i style="margin-top: 25px; margin-left: 22.5px;" class="fa fa-linkedin-square" aria-hidden="true" title="linkedin profile"></i>
                             </a>
-                            <span class="header-styled-href"> find me on linkedin</span>
+                            <span class="header-styled-href"><a href="https://www.linkedin.com/in/tomasz-urbaniak-31b2a01b1/" style="text-decoration: none; color: white;" >find me on linkedin</a></span>
                             <br/>
                             <a class="header-styled-href" href="https://github.com/tomazi776" ></aclass>
                                 <i style="margin-top: 25px; margin-left: 22.5px;" class="fa fa-github-square" aria-hidden="true" title="github"></i>
                             </a>
-                            <span class="header-styled-href"> checkout my github</span>
+                            <span class="header-styled-href"><a href="https://github.com/tomazi776"style="text-decoration: none; color: white;">checkout my github</a> </span>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="scripts/index.js" type="application/javascript"></script>
 </body>
 </html>
